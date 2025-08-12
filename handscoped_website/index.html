@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-23H40VDXGD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-23H40VDXGD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handscoped</title>
+    <meta name="description" content="Welcome to the world's first phone-controlled PC Multiplayer FPS Game!">
+    <meta name="keywords" content="phone controlled, FPS, game, first person shooter, indie">
+    <meta name="author" content="Dennis Khelvaly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .typing {
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid black;
+            display: inline-block;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .section img,
+        .section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .text-box {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* semi-transparent */
+            color: white;
+            padding: 30px;
+            padding-right: 0px;
+            padding-left: 0px;
+            width: 50%;
+            height: 100%;
+
+        }
+
+        .left .text-box {
+            margin-left: auto;
+        }
+
+        button {
+            --border: 5px;
+            /* the border width */
+            --slant: 0.7em;
+            /* control the slanted corners */
+            --color: #37E8FC;
+            /* the color */
+
+            font-size: 2vw;
+            padding: 0.4em 1.2em;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--color);
+            background:
+                linear-gradient(to bottom left, var(--color) 50%, #0000 50.1%) top right,
+                linear-gradient(to top right, var(--color) 50%, #0000 50.1%) bottom left;
+            background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+            background-repeat: no-repeat;
+            box-shadow:
+                0 0 0 200px inset var(--s, #0000),
+                0 0 0 var(--border) inset var(--color);
+            clip-path:
+                polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+                    100% 100%, var(--slant) 100%, 0 calc(100% - var(--slant)));
+            transition: color var(--t, 0.3s), background-size 0.3s;
+        }
+
+        button:focus-visible {
+            outline-offset: calc(-1*var(--border));
+            outline: var(--border) solid #000c;
+            clip-path: none;
+            background-size: 0 0;
+        }
+
+        button:hover,
+        button:active {
+            background-size: 100% 100%;
+            color: #fff;
+            --t: 0.2s 0.1s;
+        }
+
+        button:active {
+            --s: #0005;
+            transition: none;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            text-align: center;
+
+            >li {
+                float: none;
+                display: inline-block;
+            }
+        }
+
+        /* Use a media query to add a breakpoint at 800px: */
+        @media screen and (max-width: 800px) {
+
+            .mobilebanner {
+                height: unset !important;
+                margin-bottom: 5px;
+            }
+
+            .mobilelogo {
+                margin: auto !important;
+                float: unset !important;
+            }
+
+            .mobileembed {
+                width: 90% !important;
+                margin: auto !important;
+                float: unset !important;
+                margin-bottom: 5px !important;
+                /* The width is 100%, when the viewport is 800px or smaller */
+            }
+
+            .mobilenavbar {
+                padding: 0px !important;
+            }
+
+            .mobilenavbarbtns {
+                font-size: large !important;
+                --slant: unset !important;
+                margin: auto !important;
+                display: block !important;
+            }
+
+            .mobilekickbtn {
+                --slant: 0px !important;
+                font-size: large !important;
+                margin: auto !important;
+            }
+
+            .mobilesection {
+                width: unset !important;
+                height: unset !important;
+                margin-bottom: 59% !important;
+                padding-top: 0px;
+            }
+
+            .mobilegiftext {
+                font-size: 0.8em !important;
+            }
+
+            .mobilemechtext {
+                font-size: 0.9em !important;
+            }
+
+            li{
+                display: block !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="ui.css" />
+    <link rel="stylesheet" type="text/css" href="arrow.css" />
+    <link
+        href='https://fonts.googleapis.com/css?family=Exo+2:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,300,200italic,200,100italic,100'
+        rel='stylesheet' type='text/css'>
+    <link rel="icon" href="./media/logo_full2 - Copy - Copy.png">
+</head>
+
+<body style="background-color: rgb(0, 47, 82);overflow-y: scroll;">
+    <div style="height: 3vh; width: 100%;text-align: center;background-color: rgba(	034, 034, 034);"
+        class="section mobilebanner">
+        <p style="color: white;text-align: center; margin: auto;">Welcome to the world's first phone-controlled PC
+            Multiplayer FPS Game!</p>
+    </div>
+    <img class="mobilelogo" style="width:45vw;float:right;display: inline-block;margin-right: 3vw;bottom: 0px;"
+        src="./media/wallpaper_dark.png">
+    <br>
+    <iframe class="mobileembed"
+        style="float:left;display: inline-block;height:420px;width: 43%;margin: auto; margin-left: 70px;"
+        src="https://www.youtube.com/embed/mCgUdKEnGYA">
+    </iframe>
+
+    <div style="height: 80px; width: 100%;text-align: center;background-color: rgba(	034, 034, 034);" class="section ">
+        <nav style="margin-left: auto;margin-right: auto;" class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav mobilenavbar">
+                        <li><a class="mobilenavbarbtns" style="color: white;font-size: 1.5vw; margin: 0.5vw;"
+                                target="_blank" href="https://discord.gg/xkFCxJZ3vQ">Discord</a></li>
+                        <li><a target="_blank"
+                                href="https://www.kickstarter.com/projects/denniskhelvaly/handscoped-fps-game-where-your-phone-is-the-controller"><button
+                                    class="mobilekickbtn"
+                                    style="--color:#05ce78;--slant:40px;--border:0.2em; margin: auto;">Fund
+                                    the project on
+                                    Kickstarter!</button></a></li>
+                        <li><a class="mobilenavbarbtns" style="color: white;font-size: 1.5vw; margin: 0.5vw;"
+                                href="#mechanics">Mechanics</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="section left">
+        <img src="./media/first_compressed.gif">
+        <div class="text-box mobilesection">
+            <h1>Multiplayer</h1>
+            <p class="mobilegiftext"
+                style="width: 80%; margin: auto; font-weight: bold;line-height: 120%;font-size: 130%;text-align: left;">
+                Pull out your phone and start blasting your friends and foes in this unique online FPS that relies on
+                your ability to aim with your phone. Learn to wield a variety of rifles each with unique calibrations,
+                find the best cover to gun down foes, climb the ranking leaderboards as you sharpen your aiming, unlock
+                a variety of rewards and most importantly: have fun playing! The game delivers a refreshing new take on
+                competitiveness in FPS games that would be hard to find anywhere else.</p>
+        </div>
+    </div>
+
+    <div class="section right">
+        <img src="./media/second_compressed.gif">
+        <div class="text-box mobilesection">
+            <h1>Community-Driven Project</h1>
+            <p class="mobilegiftext"
+                style="width: 80%; margin: auto; font-weight: bold;line-height: 120%;font-size: 130%;text-align: left;">
+                The importance of building this game with input from the community cannot be understated. As a
+                multiplayer game, making sure the game shares a vision with the playerbase in key areas of development
+                gives it a chance to grow in popularity and keep in touch with what the community wants. As I'm most
+                familiar with Discord, that's where the bulk of my community management will happen and there will be
+                updates on Kickstarter as well.</p>
+        </div>
+    </div>
+
+    <br>
+
+    <img style="width: 90%;" id="mechanics" src="./media/Screenshot 2025-06-08 103040.png">
+    <br>
+
+    <br>
+
+    <div style="width: 90%; padding: 10px;background-color: rgb(0, 16, 33);" class="futurepanel">
+        <p class="mobilemechtext" style="color: white;font-size: 1.5vw; line-height: 110% ; width: 95%;margin: auto;">
+            Mastered a weapon and got bored of it? No problem! Each weapon comes with a different playstyle that
+            favors different aspects of combat. For example, more powerful guns tend to have larger recoil, in this
+            game that means that the flick-up required to fire such weapons would be much greater, sacrificing some
+            accuracy, stability and comfort in exchange for power. Here is an illustration on how recoil affects
+            your ability to shoot with your phone:
+        </p>
+        <br>
+        <img loading="lazy" style="width: 100%;" src="./media/low_recoil_element.gif">
+        <br>
+        <img loading="lazy" style="width: 100%;" src="./media/high_recoil_element.gif">
+    </div>
+
+    <br>
+    <br>
+    <img style="width: 90%;" id="mechanics" src="./media/Screenshot 2025-06-12 120348.png">
+    <br>
+    <br>
+
+    <div style="width: 90%; padding: 10px;background-color: rgb(0, 16, 33);" class="futurepanel">
+        <br>
+        <img loading="lazy" style="width: 50%;" src="./media/third_compressed.gif">
+        <p class="mobilemechtext" style="color: white;font-size: 1.5vw; line-height: 110% ; width: 95%;margin: auto;">
+            <br>
+            <b>Maps</b> are built to have opposite teams face each other. The cover you hide behind is generally either
+            partial cover or can be exposed through clever positioning, forcing you to learn about strengths and
+            weaknesses of any given location in all of the maps.
+            <br>
+            <br>
+            <b>Movement</b> is simplified to be as intuitive as possible while allowing most of the focus to be on
+            aiming. The movement was designed to be only in left and right directions across a line defined by the map
+            (some maps have curved paths or slopes to climb for high-ground advantage). Tilting your phone sideways in
+            either direction will make your character move until you stop tilting. This type of movement allows for
+            repositioning, hiding behind cover and dodging enemy fire while distancing opposing teams for safety.
+            <br>
+            <br>
+        </p>
+    </div>
+
+    <br>
+    <br>
+    <img style="width: 90%;" id="mechanics" src="./media/Screenshot 2025-06-12 120927.png">
+    <br>
+    <br>
+    <div style="width: 90%; padding: 10px;background-color: rgb(0, 16, 33);" class="futurepanel">
+        <p class="mobilemechtext" style="color: white;font-size: 1.5vw; line-height: 110% ; width: 95%;margin: auto;">
+            <b>Alpha is planned to start around late November to mid December.</b> My goal is to invite the majority of
+            backers of all tiers to alpha testing. I can't give a release date for later testing phases (ex: second
+            alpha testing, beta) until after the first alpha is over, because it depends on the bugs and requests from
+            the testers of the first alpha.
+            <br>
+            <br>
+            <b>What to expect from the alpha?</b> The alpha's main goals is to test the novel controls on a massive
+            scale, server stability, general gameplay flow, latency as well as finding bugs. So I will focus my
+            attention on those things rather than the amount of content available for first alpha. Therefore, there will
+            be a limited number of playable maps during playtesting, likely no advanced queue ranking system or
+            leaderboards yet. Some Kickstarter rewards may come at a later playtest.
+        </p>
+    </div>
+    <br>
+    <br>
+    <img style="width: 90%;" id="mechanics" src="./media/Screenshot 2025-06-12 131625.png">
+    <br>
+    <br>
+    <div style="width: 90%; padding: 10px;background-color: rgb(0, 16, 33);" class="futurepanel">
+        <p class="mobilemechtext" style="color: white;font-size: 1.5vw; line-height: 110% ; width: 95%;margin: auto;">
+            After I was done developing the phone controller, movement, combat & realistic visuals, I figured it was
+            time to take this project seriously and bring a community to it. Funding this project means I'll be able to
+            dedicate quite a significant amount of time turning this into a playable online FPS. Having backers that I
+            can bounce ideas off of & get feedback from will also be an invaluable tool to refine this project into
+            something far greater than what I could achieve by myself.
+        </p>
+    </div>
+
+    <br>
+    <br>
+
+    <div style="height: 80px; width: 100%;text-align: center;background-color: rgba(	034, 034, 034);" class="section ">
+        <nav style="margin-left: auto;margin-right: auto;" class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav mobilenavbar">
+                        <li><a class="mobilenavbarbtns" target="_blank"
+                                style="color: white;font-size: 1.5vw; margin: 0.5vw;"
+                                href="https://discord.gg/xkFCxJZ3vQ">Discord</a></li>
+                        <li><a target="_blank"
+                                href="https://www.kickstarter.com/projects/denniskhelvaly/handscoped-fps-game-where-your-phone-is-the-controller"><button
+                                    class="mobilekickbtn"
+                                    style="--color:#05ce78;--slant:40px;--border:0.2em; margin: auto;">Fund
+                                    the project on
+                                    Kickstarter!</button></a></li>
+                        <li><a class="mobilenavbarbtns" target="_blank"
+                                style="color: white;font-size: 1.5vw; margin: 0.5vw;"
+                                href="https://www.youtube.com/watch?v=mCgUdKEnGYA">Trailer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
